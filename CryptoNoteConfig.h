@@ -69,16 +69,36 @@ const uint8_t  BLOCK_MINOR_VERSION_0                     �
 const size_t   BLOCKS_IDS_SYNCHRONIZING_DEFAULT_COUNT        =  10000;  //by default, blocks ids count in synchronizing
 const size_t   BLOCKS_SYNCHRONIZING_DEFAULT_COUNT            =  200;    //by default, blocks count in blocks downloading
 const size_t   COMMAND_RPC_GET_BLOCKS_FAST_MAX_COUNT         =  1000;
-//TODO This port will be used by the daemon to establish connections with p2p networkconst int      P2P_DEFAULT_PORT                              = ;//TODO This port will be used by the daemon to interact with simlewalletconst int      RPC_DEFAULT_PORT                              = ;
+//TODO This port will be used by the daemon to establish connections with p2p network
+const int      P2P_DEFAULT_PORT                              = ;//TODO This port will be used by the daemon to interact with simlewalletconst int      RPC_DEFAULT_PORT                              = ;
 const size_t   P2P_LOCAL_WHITE_PEERLIST_LIMIT                =  1000;
 const size_t   P2P_LOCAL_GRAY_PEERLIST_LIMIT                 =  5000;
-const size_t   P2P_CONNECTION_MAX_WRITE_BUFFER_SIZE          = 16 * 1024 * 1024; // 16 MBconst uint32_t P2P_DEFAULT_CONNECTIONS_COUNT                 = 8;const size_t   P2P_DEFAULT_WHITELIST_CONNECTIONS_PERCENT     = 70;const uint32_t P2P_DEFAULT_HANDSHAKE_INTERVAL                = 60;            // seconds
+const size_t   P2P_CONNECTION_MAX_WRITE_BUFFER_SIZE          = 16 * 1024 * 1024; // 16 MB
+const uint32_t P2P_DEFAULT_CONNECTIONS_COUNT                 = 8;
+const size_t   P2P_DEFAULT_WHITELIST_CONNECTIONS_PERCENT     = 70;
+const uint32_t P2P_DEFAULT_HANDSHAKE_INTERVAL                = 60;            // seconds
 const uint32_t P2P_DEFAULT_PACKET_MAX_SIZE                   = 50000000;      // 50000000 bytes maximum packet size
-const uint32_t P2P_DEFAULT_PEERS_IN_HANDSHAKE                = 250;const uint32_t P2P_DEFAULT_CONNECTION_TIMEOUT                = 5000;          // 5 seconds
+const uint32_t P2P_DEFAULT_PEERS_IN_HANDSHAKE                = 250;
+const uint32_t P2P_DEFAULT_CONNECTION_TIMEOUT                = 5000;          // 5 seconds
 const uint32_t P2P_DEFAULT_PING_CONNECTION_TIMEOUT           = 2000;          // 2 seconds
-const uint64_t P2P_DEFAULT_INVOKE_TIMEOUT                    = 60 * 2 * 1000; // 2 minutesconst size_t   P2P_DEFAULT_HANDSHAKE_INVOKE_TIMEOUT          = 5000;          // 5 secondsconst char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "8f80f9a5a434a9f1510d13336228debfee9c918ce505efe225d8c94d045fa115";
-//TODO Add here your network seed nodesconst std::initializer_list<const char*> SEED_NODES = {  //"your_seed_ip1.com:8080",  //"your_seed_ip2.com:8080",};
+const uint64_t P2P_DEFAULT_INVOKE_TIMEOUT                    = 60 * 2 * 1000; // 2 minutes
+const size_t   P2P_DEFAULT_HANDSHAKE_INVOKE_TIMEOUT          = 5000;          // 5 seconds
+const char     P2P_STAT_TRUSTED_PUB_KEY[]                    = "8f80f9a5a434a9f1510d13336228debfee9c918ce505efe225d8c94d045fa115";
+//TODO Add here your network seed nodes
+const std::initializer_list<const char*> SEED_NODES = {
+  //"your_seed_ip1.com:8080",
+  //"your_seed_ip2.com:8080",};
 struct CheckpointData {  uint32_t height;  const char* blockId;};
-#ifdef __GNUC____attribute__((unused))#endif
-// You may add here other checkpoints using the following format:// {<block height>, "<block hash>"},const std::initializer_list<CheckpointData> CHECKPOINTS = {  //{ 10000, "84b6345731e2702cdaadc6ce5e5238c4ca5ecf48e3447136b2ed829b8a95f3ad" },};} // CryptoNote
+
+#ifdef __GNUC____
+attribute__((unused))
+#endif
+
+// You may add here other checkpoints using the following format:
+// {<block height>, "<block hash>"},
+const std::initializer_list<CheckpointData> CHECKPOINTS = {  
+  //{ 10000, "84b6345731e2702cdaadc6ce5e5238c4ca5ecf48e3447136b2ed829b8a95f3ad" },
+};
+} // CryptoNote
+
 #define ALLOW_DEBUG_COMMANDS
